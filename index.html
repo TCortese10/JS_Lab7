@@ -15,10 +15,11 @@
 
     <h2>Mouse Events</h2>
     <section id="mouse" class="mouse">
-        <div id="hoverBtn" style="padding: 20px; margin-top: 10px; margin-bottom: 80px; border: 1px solid #000;">Hover Over Me!</div>
+        <div id="hoverBtn" style="padding: 20px; margin-top: 10px; margin-bottom: 80px; border: 1px solid #000;">Hover
+            Over Me!</div>
         <script>
             var hoverBtn = document.getElementById('hoverBtn');
-            hoverBtn.addEventListener('mouseenter', function () {  
+            hoverBtn.addEventListener('mouseenter', function () {
                 this.style.backgroundColor = 'rgb(101, 184, 101)';
                 this.textContent = 'Currently Hovering!';
             });
@@ -33,12 +34,41 @@
     <section id="keyboard" class="keyboard">
         <div id="keyPressed">Press Any Key!</div>
         <script>
-            document.addEventListener('keydown', function(event) {
+            document.addEventListener('keydown', function (event) {
                 document.getElementById('keyPressed').textContent = 'You Pressed: ' + event.key;
 
             });
         </script>
     </section>
+
+    <h2>Form Events</h2>
+    <form id="formEvents">
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username" placeholder="Enter your Username:">
+
+        <label for="status">Status:</label>
+        <select id="status" name="status">
+            <option value="active">Active</option>
+            <option value="inactive">Inactive</option>
+            <option value="pending">Pending</option>
+        </select>
+        <button type="submit">Submit</button>
+    </form>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const form = document.getElementById('formEvents');
+            const username = document.getElementById('username');
+            const status = document.getElementById('status');
+
+            form.addEventListener('submit', function(event) {
+                console.log('Form Submitted');
+                event.preventDefault();
+                alert(`Username: ${username.value}, Status: ${status.value}`);
+            });
+
+        });
+    </script>
 </body>
 
 </html>

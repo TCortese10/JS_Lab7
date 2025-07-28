@@ -32,3 +32,13 @@ h2{
     margin-bottom: 80px;
     font-size: larger;
 }
+
+form{
+    padding: 20px;
+    margin-top: 10px;
+    margin-bottom: 80px;
+    background: rgb(101, 184, 101); 
+    width: 500px;
+    color: white;  
+}
+
