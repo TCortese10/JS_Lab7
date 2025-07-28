@@ -15,7 +15,7 @@
 
     <h2>Mouse Events</h2>
     <section id="mouse" class="mouse">
-        <div id="hoverBtn" style="padding: 20px; margin-top: 10px; border: 1px solid #000;">Hover Over Me!</div>
+        <div id="hoverBtn" style="padding: 20px; margin-top: 10px; margin-bottom: 80px; border: 1px solid #000;">Hover Over Me!</div>
         <script>
             var hoverBtn = document.getElementById('hoverBtn');
             hoverBtn.addEventListener('mouseenter', function () {  
@@ -25,6 +25,17 @@
             hoverBtn.addEventListener('mouseleave', function () {
                 this.style.backgroundColor = 'transparent';
                 this.textContent = 'Hover Over Me!';
+            });
+        </script>
+    </section>
+
+    <h2>Keyboard Events</h2>
+    <section id="keyboard" class="keyboard">
+        <div id="keyPressed">Press Any Key!</div>
+        <script>
+            document.addEventListener('keydown', function(event) {
+                document.getElementById('keyPressed').textContent = 'You Pressed: ' + event.key;
+
             });
         </script>
     </section>
