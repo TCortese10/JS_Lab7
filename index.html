@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lab 7: JavaScript Events</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header>
+        <h1>Lab 7: JavaScript Events</h1>
+    </header>
+
+    <h2>Mouse Events</h2>
+    <section id="mouse" class="mouse">
+        <div id="hoverBtn" style="padding: 20px; margin-top: 10px; border: 1px solid #000;">Hover Over Me!</div>
+        <script>
+            var hoverBtn = document.getElementById('hoverBtn');
+            hoverBtn.addEventListener('mouseenter', function () {  
+                this.style.backgroundColor = 'rgb(101, 184, 101)';
+                this.textContent = 'Currently Hovering!';
+            });
+            hoverBtn.addEventListener('mouseleave', function () {
+                this.style.backgroundColor = 'transparent';
+                this.textContent = 'Hover Over Me!';
+            });
+        </script>
+    </section>
+</body>
+
+</html>
