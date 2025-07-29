@@ -56,12 +56,12 @@
     </form>
 
     <script>
-        document.addEventListener('DOMContentLoaded', function() {
+        document.addEventListener('DOMContentLoaded', function () {
             const form = document.getElementById('formEvents');
             const username = document.getElementById('username');
             const status = document.getElementById('status');
 
-            form.addEventListener('submit', function(event) {
+            form.addEventListener('submit', function (event) {
                 console.log('Form Submitted');
                 event.preventDefault();
                 alert(`Username: ${username.value}, Status: ${status.value}`);
@@ -69,6 +69,50 @@
 
         });
     </script>
+
+
+    <h2>Focus Events</h2>
+    <section id="focus" class="focus">
+        <label for="randomWord" id="wordLabel">Enter Any Word:</label>
+        <input type="text" id="randomWord" onfocus="handleFocus();" onblur="handleBlur();">
+
+        <script>
+            function handleFocus() {
+                document.getElementById('wordLabel').textContent = 'Currently Entering Word: ';
+
+                document.getElementById('randomWord').style.background = '';
+            }
+
+            function handleBlur() {
+                document.getElementById('wordLabel').textContent = 'Enter Any Word:'
+
+            }
+        </script>
+    </section>
+
+
+    <h2>Event Delegation</h2>
+    <section id="delegation" class="delegation">
+        <p>Select any item!</p>
+        <div id="buttonContainer">
+            <button>Button 1</button>
+            <button>Button 2</button>
+            <button>Button 3</button>
+            <button>Button 4</button>
+            <button>Button 5</button>
+            <button>Button 6</button>
+        </div>
+
+        <script>
+            const list = document.getElementById('buttonContainer');
+
+            list.addEventListener('click', function(event) {
+                if (event.target.tagName === 'BUTTON') {
+                    alert('Displaying Information for: ' + event.target.textContent);
+                }
+            });
+        </script>
+    </section>
 </body>
 
 </html>

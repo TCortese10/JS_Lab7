@@ -42,3 +42,9 @@ form{
     color: white;  
 }
 
+.focus{
+    padding: 20px;
+    margin-top: 10px;
+    margin-bottom: 80px;
+    font-size: larger;
+}
